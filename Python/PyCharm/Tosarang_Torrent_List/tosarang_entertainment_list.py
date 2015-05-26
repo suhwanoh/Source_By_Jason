@@ -111,6 +111,6 @@ def get_single_item_data(item_url):
         href = "http://www.tosarang.net" + link.get('href')
         print(href)
 '''
-trade_spider(1532)
+trade_spider(1)
 
 

@@ -65,6 +65,6 @@ def get_single_item_data(item_url):
         return(item_name.string)
 
 
-trade_spider(231)
+trade_spider(1)
 
 

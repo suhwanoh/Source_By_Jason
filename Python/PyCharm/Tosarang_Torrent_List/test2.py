@@ -1,9 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
-
+import csv
+import sys
 
 def trade_spider(max_pages):
-    page = 1
+    page=1
 
     title_list = []
     href_list = []
@@ -53,24 +54,23 @@ def trade_spider(max_pages):
 
 
 
-                    final_list = [title,href,magnet]
-                    torrent_list.append(final_list)
-                    '''
-                    print(title)
-                    print(href)
-                    print(magnet)
-                    print('\n')
-                    '''
-
+                    title_list.append(title)
+                    href_list.append(href)
+                    magnet_list.append(magnet)
 
 
 
 
         page += 1
 
-    print(torrent_list)
+    print(title_list)
+    print(href_list)
+    print(magnet_list)
+    final_list = [title_list, href_list, magnet_list]
 
-
+    with open('torrent_list.csv','w',newline='') as f:
+        t1 = csv.writer(f)
+        t1.writerows(final_list)
 
 
 
